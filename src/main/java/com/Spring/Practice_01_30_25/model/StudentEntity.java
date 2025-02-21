@@ -2,6 +2,7 @@ package com.Spring.Practice_01_30_25.model;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,7 +14,9 @@ public class StudentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@Column(unique = true)
 	private String name;
+	@Column(length = 10)
 	private String contact;
 	public Integer getId() {
 		return id;
